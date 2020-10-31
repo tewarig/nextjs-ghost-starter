@@ -1,21 +1,33 @@
 import allPostUrl from "../services/post";
 import Image from "next/image";
+import Link from "next/link";
 
 function Home({ posts }) {
-  console.log(posts.posts[0].feature_image);
   return (
     <ul>
       {posts.posts.map((post) => (
         <>
-          <li>{post.title}</li>
+          {/* dynamic routing to make slug easily avalible */}
+          <Link
+            href={`/post/${post.title}`}
+            as={`/post/${encodeURIComponent(post.title)}`}
+          >
+            <a>
+              <>
+                <li key={post.id}>
+                  {post.title}
 
-          <img
-            src={post.feature_image}
-            alt="Picture of the author"
-            width={500}
-            height={500}
-          />
-          <p>{post.reading_time} min</p>
+                  <img
+                    src={post.feature_image}
+                    alt="Picture of the author"
+                    width={500}
+                    height={500}
+                  />
+                  <p>{post.reading_time} min</p>
+                </li>
+              </>
+            </a>
+          </Link>
         </>
       ))}
     </ul>
@@ -25,6 +37,7 @@ function Home({ posts }) {
 // This function gets called at build time on server-side.
 // It won't be called on client-side, so you can even do
 // direct database queries. See the "Technical details" section.
+
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
@@ -39,5 +52,4 @@ export async function getStaticProps() {
     },
   };
 }
-
 export default Home;
