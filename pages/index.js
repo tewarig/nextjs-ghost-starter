@@ -9,8 +9,8 @@ function Home({ posts }) {
         <>
           {/* dynamic routing to make slug easily avalible */}
           <Link
-            href={`/post/${post.title}`}
-            as={`/post/${encodeURIComponent(post.title)}`}
+            href={`/post/${post.slug}`}
+            as={`/post/${encodeURIComponent(post.slug)}`}
           >
             <a>
               <>
