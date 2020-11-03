@@ -15,7 +15,7 @@ export const getStaticProps = async ({ params }) => {
   const post = await getPost(params.slug);
   return {
     props: { post },
-    revalidate: 1,
+    revalidate: 15,
   };
 };
 
@@ -30,18 +30,31 @@ export const getStaticPaths = () => {
 
 const Post = ({ post }) => {
   const router = useRouter();
-  const { slug } = router.query;
-  console.log(post);
+  // const { slug } = router.query;
+  // console.log(slug);
+  // console.log(post);
+  if (typeof post === "undefined") {
+    return <h1> 404</h1>;
+  }
+
   const title = post["title"];
   const body = post["html"];
 
-  return (
+  if (router.isFallback) {
+    return <h1>Loading...</h1>;
+  }
+  if (!post) {
+    return <h1>not find</h1>;
+  }
+  return post ? (
     <>
       <h2>{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: body }}></div>
       {/* <h2>{props}</h2> */}
       {/* <div>{post.html}</div> */}
     </>
+  ) : (
+    <> loading </>
   );
 };
 
