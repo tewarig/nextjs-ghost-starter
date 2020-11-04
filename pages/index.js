@@ -1,36 +1,40 @@
 import allPostUrl from "../services/post";
 import Image from "next/image";
 import Link from "next/link";
+import NavBar from "./comp/navbar";
 
 function Home({ posts }) {
   return (
-    <ul>
-      {posts.posts.map((post) => (
-        <>
-          {/* dynamic routing to make slug easily avalible */}
-          <Link
-            href={`/post/${post.slug}`}
-            as={`/post/${encodeURIComponent(post.slug)}`}
-          >
-            <a>
-              <>
-                <li key={post.id}>
-                  {post.title}
+    <>
+      <NavBar />
+      <ul>
+        {posts.posts.map((post) => (
+          <>
+            {/* dynamic routing to make slug easily avalible */}
+            <Link
+              href={`/post/${post.slug}`}
+              as={`/post/${encodeURIComponent(post.slug)}`}
+            >
+              <a>
+                <>
+                  <li key={post.id}>
+                    {post.title}
 
-                  <img
-                    src={post.feature_image}
-                    alt="Picture of the author"
-                    width={500}
-                    height={500}
-                  />
-                  <p>{post.reading_time} min</p>
-                </li>
-              </>
-            </a>
-          </Link>
-        </>
-      ))}
-    </ul>
+                    <img
+                      src={post.feature_image}
+                      alt="Picture of the author"
+                      width={500}
+                      height={500}
+                    />
+                    <p>{post.reading_time} min</p>
+                  </li>
+                </>
+              </a>
+            </Link>
+          </>
+        ))}
+      </ul>
+    </>
   );
 }
 

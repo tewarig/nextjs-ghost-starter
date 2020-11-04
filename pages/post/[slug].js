@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { appUrl, contentKey } from "../../site-config";
+import NavBar from "../comp/navbar";
 
 async function getPost(slug) {
   const res = await fetch(
@@ -34,7 +35,14 @@ const Post = ({ post }) => {
   // console.log(slug);
   // console.log(post);
   if (typeof post === "undefined") {
-    return <h1> 404</h1>;
+    return (
+      <>
+        <NavBar />
+        <br />
+        <br />
+        <h1> 404</h1>
+      </>
+    );
   }
 
   const title = post["title"];
@@ -43,18 +51,15 @@ const Post = ({ post }) => {
   if (router.isFallback) {
     return <h1>Loading...</h1>;
   }
-  if (!post) {
-    return <h1>not find</h1>;
-  }
-  return post ? (
+
+  return post(
     <>
+      <NavBar />
       <h2>{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: body }}></div>
       {/* <h2>{props}</h2> */}
       {/* <div>{post.html}</div> */}
     </>
-  ) : (
-    <> loading </>
   );
 };
 
