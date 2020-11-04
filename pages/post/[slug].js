@@ -35,14 +35,7 @@ const Post = ({ post }) => {
   // console.log(slug);
   // console.log(post);
   if (typeof post === "undefined") {
-    return (
-      <>
-        <NavBar />
-        <br />
-        <br />
-        <h1> 404</h1>
-      </>
-    );
+    return <h1> 404</h1>;
   }
 
   const title = post["title"];
@@ -51,15 +44,22 @@ const Post = ({ post }) => {
   if (router.isFallback) {
     return <h1>Loading...</h1>;
   }
-
-  return post(
+  if (!post) {
+    return <h1>not find</h1>;
+  }
+  console.log(post);
+  return post ? (
     <>
       <NavBar />
+      <br />
+      <br />
       <h2>{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: body }}></div>
       {/* <h2>{props}</h2> */}
       {/* <div>{post.html}</div> */}
     </>
+  ) : (
+    <> loading </>
   );
 };
 
