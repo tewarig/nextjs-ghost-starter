@@ -2,8 +2,13 @@ import axios from "axios";
 
 import { appUrl, contentKey } from "../site-config";
 
-// https://onepbetter.herokuapp.com/ghost/api/v3/content/posts/?key=413feaabea32862b596edb8ee1
-const allPostUrl = appUrl + "ghost/api/v3/content/posts/?key=" + contentKey;
+// https://onepbetter.herokuapp.com/ghost/api/v3/content/posts/?key=413feaabea32862b596edb8ee1&include=tags,authors
+
+const allPostUrl =
+  appUrl +
+  "ghost/api/v3/content/posts/?key=" +
+  contentKey +
+  "&include=tags,authors";
 export default allPostUrl;
 
 // This function gets called at build time on server-side.
