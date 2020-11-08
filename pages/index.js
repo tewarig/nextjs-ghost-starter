@@ -19,23 +19,43 @@ function Home({ posts }) {
             >
               <a>
                 <>
-                  {post.title}
-                  <Image
-                    unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
-                    src={post.feature_image}
-                    width={500}
-                    height={500}
-                    loading="lazy"
-                  />
-                  <b> {post.primary_author.name}</b>
-                  <Image
-                    unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
-                    src={post.primary_author.profile_image}
-                    alt={post.primary_author.name}
-                    width={100}
-                    height={100}
-                  />{" "}
-                  <p>{post.reading_time} min</p>
+                  <div className="card">
+                    <div className="card-header">
+                      <Image
+                        unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+                        src={post.feature_image}
+                        width={500}
+                        height={500}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="card-body">
+                      <span class="tag tag-teal">Technology</span>
+                      <h4>{post.title}</h4>
+                      <p>{post.slug}</p>
+                      <div className="card-user">
+                        <Image
+                          unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+                          src={post.primary_author.profile_image}
+                          alt={post.primary_author.name}
+                          width={50}
+                          height={50}
+                          className="author-profile"
+                        />{" "}
+                        <div class="user-info">
+                          <h5>{post.primary_author.name}</h5>
+                          <small>2 minutes ago</small>
+                        </div>
+                      </div>
+                    </div>
+                    {post.title}
+                    <div className="author">
+                      <div className="author-name">
+                        {post.primary_author.name}
+                      </div>
+                    </div>
+                    <p>{post.reading_time} min</p>
+                  </div>
                 </>
               </a>
             </Link>

@@ -173,3 +173,88 @@ a {
   transform: translateX(110%);
   transition: all var(--speed) ease;
 }
+
+.author-profile {
+  border-radius: 50%;
+  display: inherit;
+}
+.author-name {
+  display: inherit;
+}
+.author {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.card {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-body {
+  margin-top: -5px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 275px;
+}
+
+.card-header img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card .card-body .tag {
+  padding: 2px 10px;
+  background-color: royalblue;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.card .card-body .tag.tag-travel {
+  background-color: #8e44ad;
+}
+
+.card .card-body p {
+  font-size: 13px;
+  margin: 0 0 40px;
+}
+
+h4 {
+  margin: 10px 0;
+}
+
+.card .card-user {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.card-user img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 40px;
+  margin-right: 10px;
+}
+
+.card-user small {
+  color: #888;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+}
