@@ -27,7 +27,7 @@ function Home({ posts }) {
                         unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
                         src={post.feature_image}
                         width={450}
-                        height={200}
+                        height={350}
                         loading="lazy"
                       />
                     </div>
