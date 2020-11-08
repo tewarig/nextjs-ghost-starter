@@ -2,7 +2,6 @@ import allPostUrl from "../services/post";
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "./comp/navbar";
-import PostCard from "./comp/postCard";
 
 function Home({ posts }) {
   console.log(posts);
@@ -11,7 +10,36 @@ function Home({ posts }) {
       <NavBar />
       <ul>
         {posts.posts.map((post) => (
-          <PostCard post={post} />
+          <li key={post.id}>
+            {/* dynamic routing to make slug easily avalible */}
+            <Link
+              href={`/post/${post.slug}`}
+              as={`/post/${encodeURIComponent(post.slug)}`}
+              className="post-card"
+            >
+              <a>
+                <>
+                  {post.title}
+                  <Image
+                    unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+                    src={post.feature_image}
+                    width={500}
+                    height={500}
+                    loading="lazy"
+                  />
+                  <b> {post.primary_author.name}</b>
+                  <Image
+                    unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+                    src={post.primary_author.profile_image}
+                    alt={post.primary_author.name}
+                    width={100}
+                    height={100}
+                  />{" "}
+                  <p>{post.reading_time} min</p>
+                </>
+              </a>
+            </Link>
+          </li>
         ))}
       </ul>
     </>

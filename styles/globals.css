@@ -44,6 +44,7 @@ a {
   padding: inherit;
   top: 0;
   color: var(--text-color-navbar);
+  z-index: 1;
 }
 
 /* <ul> */
