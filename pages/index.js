@@ -8,6 +8,8 @@ function Home({ posts }) {
   return (
     <>
       <NavBar />
+      <br />
+      <br />
       <ul>
         {posts.posts.map((post) => (
           <li key={post.id}>
@@ -24,8 +26,8 @@ function Home({ posts }) {
                       <Image
                         unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
                         src={post.feature_image}
-                        width={500}
-                        height={500}
+                        width={400}
+                        height={200}
                         loading="lazy"
                       />
                     </div>
@@ -44,17 +46,10 @@ function Home({ posts }) {
                         />{" "}
                         <div class="user-info">
                           <h5>{post.primary_author.name}</h5>
-                          <small>2 minutes ago</small>
+                          <small>{post.reading_time} minutes </small>
                         </div>
                       </div>
                     </div>
-                    {post.title}
-                    <div className="author">
-                      <div className="author-name">
-                        {post.primary_author.name}
-                      </div>
-                    </div>
-                    <p>{post.reading_time} min</p>
                   </div>
                 </>
               </a>
