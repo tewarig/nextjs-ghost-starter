@@ -29,9 +29,10 @@ function Home({ posts }) {
                         <Image
                           unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
                           src={post.feature_image}
-                          width={1080}
-                          height={1080}
+                          width={720}
+                          height={720}
                           loading="lazy"
+                          quality="25"
                         />
                       </div>
                       <div className="card-body">
@@ -79,6 +80,7 @@ function Home({ posts }) {
                           width={1080}
                           height={1080}
                           loading="lazy"
+                          quality="25"
                         />
                       </div>
                       <div className="card-body">
