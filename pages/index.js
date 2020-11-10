@@ -10,52 +10,105 @@ function Home({ posts }) {
       <NavBar />
       <br />
       <br />
+      <br />
+      <br />
       <ul>
-        {posts.posts.map((post) => (
-          <li key={post.id}>
-            {/* dynamic routing to make slug easily avalible */}
-            <Link
-              href={`/post/${post.slug}`}
-              as={`/post/${encodeURIComponent(post.slug)}`}
-              className="post-card"
-            >
-              <a>
-                <>
-                  <div className="card">
-                    <div className="card-header">
-                      <Image
-                        unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
-                        src={post.feature_image}
-                        width={450}
-                        height={350}
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="card-body">
-                      <span class="tag tag-teal">Technology</span>
-                      <h4>{post.title}</h4>
-                      <p>{post.slug}</p>
-                      <div className="card-user">
+        <div className="basic-grid">
+          {posts.posts.map((post) => (
+            <li key={post.id}>
+              {/* dynamic routing to make slug easily avalible */}
+              <Link
+                href={`/post/${post.slug}`}
+                as={`/post/${encodeURIComponent(post.slug)}`}
+                className="post-card"
+              >
+                <a>
+                  <>
+                    <div className="card">
+                      <div className="card-header">
                         <Image
                           unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
-                          src={post.primary_author.profile_image}
-                          alt={post.primary_author.name}
-                          width={50}
-                          height={50}
-                          className="author-profile"
-                        />{" "}
-                        <div class="user-info">
-                          <h5>{post.primary_author.name}</h5>
-                          <small>{post.reading_time} minutes </small>
+                          src={post.feature_image}
+                          width={450}
+                          height={350}
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="card-body">
+                        <span class="tag tag-teal">Technology</span>
+                        <h4>{post.title}</h4>
+                        <p>{post.slug}</p>
+                        <div className="card-user">
+                          <Image
+                            unoptimized={
+                              process.env.ENVIRONMENT !== "PRODUCTION"
+                            }
+                            src={post.primary_author.profile_image}
+                            alt={post.primary_author.name}
+                            width={50}
+                            height={50}
+                            className="author-profile"
+                          />{" "}
+                          <div class="user-info">
+                            <h5>{post.primary_author.name}</h5>
+                            <small>{post.reading_time} minutes read</small>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </>
-              </a>
-            </Link>
-          </li>
-        ))}
+                  </>
+                </a>
+              </Link>
+            </li>
+          ))}
+          {posts.posts.map((post) => (
+            <li key={post.id}>
+              {/* dynamic routing to make slug easily avalible */}
+              <Link
+                href={`/post/${post.slug}`}
+                as={`/post/${encodeURIComponent(post.slug)}`}
+                className="post-card"
+              >
+                <a>
+                  <>
+                    <div className="card">
+                      <div className="card-header">
+                        <Image
+                          unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+                          src={post.feature_image}
+                          width={450}
+                          height={350}
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="card-body">
+                        <span class="tag tag-teal">Technology</span>
+                        <h4>{post.title}</h4>
+                        <p>{post.slug}</p>
+                        <div className="card-user">
+                          <Image
+                            unoptimized={
+                              process.env.ENVIRONMENT !== "PRODUCTION"
+                            }
+                            src={post.primary_author.profile_image}
+                            alt={post.primary_author.name}
+                            width={50}
+                            height={50}
+                            className="author-profile"
+                          />{" "}
+                          <div class="user-info">
+                            <h5>{post.primary_author.name}</h5>
+                            <small>{post.reading_time} minutes read</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                </a>
+              </Link>
+            </li>
+          ))}
+        </div>
       </ul>
     </>
   );
