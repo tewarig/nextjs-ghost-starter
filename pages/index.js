@@ -29,8 +29,8 @@ function Home({ posts }) {
                         <Image
                           unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
                           src={post.feature_image}
-                          width={450}
-                          height={350}
+                          width={1080}
+                          height={1080}
                           loading="lazy"
                         />
                       </div>
@@ -76,8 +76,8 @@ function Home({ posts }) {
                         <Image
                           unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
                           src={post.feature_image}
-                          width={450}
-                          height={350}
+                          width={1080}
+                          height={1080}
                           loading="lazy"
                         />
                       </div>
