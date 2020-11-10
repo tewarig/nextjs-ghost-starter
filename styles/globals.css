@@ -302,5 +302,5 @@ h4 {
 .basic-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
