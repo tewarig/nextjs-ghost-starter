@@ -27,7 +27,7 @@ function Home({ posts }) {
                     <div className="card">
                       <div className="card-header">
                         <Image
-                          unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+                          // unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
                           src={post.feature_image}
                           width={480}
                           height={480}
@@ -40,9 +40,9 @@ function Home({ posts }) {
                         <p>{post.slug}</p>
                         <div className="card-user">
                           <Image
-                            unoptimized={
-                              process.env.ENVIRONMENT !== "PRODUCTION"
-                            }
+                            // unoptimized={
+                            //   process.env.ENVIRONMENT !== "PRODUCTION"
+                            // }
                             src={post.primary_author.profile_image}
                             alt={post.primary_author.name}
                             width={50}
@@ -74,7 +74,7 @@ function Home({ posts }) {
                     <div className="card">
                       <div className="card-header">
                         <Image
-                          unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+                          // unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
                           src={post.feature_image}
                           width={480}
                           height={480}
@@ -87,9 +87,9 @@ function Home({ posts }) {
                         <p>{post.slug}</p>
                         <div className="card-user">
                           <Image
-                            unoptimized={
-                              process.env.ENVIRONMENT !== "PRODUCTION"
-                            }
+                            // unoptimized={
+                            //   process.env.ENVIRONMENT !== "PRODUCTION"
+                            // }
                             src={post.primary_author.profile_image}
                             alt={post.primary_author.name}
                             width={50}
