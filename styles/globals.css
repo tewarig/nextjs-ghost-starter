@@ -284,6 +284,11 @@ h4 {
 }
 
 @media screen and (max-width: 960px) {
+  .postBody .kg-image {
+    height: 100%;
+    width: 100%;
+  }
+
   .container {
     grid-template-columns: 1fr;
     justify-content: center;
