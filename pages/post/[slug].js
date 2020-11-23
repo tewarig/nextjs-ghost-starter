@@ -29,6 +29,12 @@ export const getStaticPaths = () => {
   };
 };
 
+const styleObj = {
+  color: 'white',
+  backgroundColor: 'red'
+};
+
+
 const Post = ({ post }) => {
   const router = useRouter();
   // const { slug } = router.query;
@@ -53,10 +59,11 @@ const Post = ({ post }) => {
       <NavBar />
       <br />
       <br />
-      <h2>{title}</h2>
-      <div dangerouslySetInnerHTML={{ __html: body }}></div>
-      {/* <h2>{props}</h2> */}
-      {/* <div>{post.html}</div> */}
+      <h2 className="postTitle">{title}</h2>
+      <div
+        className="postBody"
+        dangerouslySetInnerHTML={{ __html: body }}
+      ></div>
     </>
   ) : (
     <> loading </>
