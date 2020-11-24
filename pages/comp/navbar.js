@@ -1,8 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import Link from "next/link";
+import siteSettingUrl from "../../services/siteSetting";
 
-const NavBar = () => {
+
+
+
+export async function getStaticProps() {
+  const res = await fetch(siteSettingUrl);
+  const data = await res.json();
+  
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: {data}, // will be passed to the page component as props
+  }
+}
+
+ 
+function NavBar({data}) {
+  console.log("yo");
+  console.log(data);
   return (
     <>
       <Navbar siteName="Opbetter">
@@ -151,4 +173,8 @@ function DropdownMenu() {
     </div>
   );
 }
+
+
+
+
 export default NavBar;
