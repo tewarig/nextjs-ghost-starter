@@ -6,6 +6,8 @@ module.exports = {
       "gravatar.com",
       "www.gravatar.com",
       "images.gravatar.com",
+      "demo.ghost.io",
+      "ghost.io"
     ],
   },
 };
