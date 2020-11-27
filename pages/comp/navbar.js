@@ -27,7 +27,7 @@ function NavBar({data}) {
   console.log(data);
   return (
     <>
-      <Navbar siteName="Opbetter">
+      <Navbar siteName="Ghost CMS">
         <NavItemExternal icon={"🐦"} link="https://twitter.com/OyeTewari" />
         <NavItemExternal icon={"📷 "} />
         <NavItem icon={"💠"}>
