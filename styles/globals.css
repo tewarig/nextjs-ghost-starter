@@ -445,7 +445,14 @@ h4 {
     width: 100%;
     height: 300px;
   }
-
+  .logo {
+    text-align: center;
+    position: absolute;
+    font-size: 18px;
+    top: 15%;
+    left: 12%;
+    color: white;
+  }
   .container {
     grid-template-columns: 1fr;
     justify-content: center;
