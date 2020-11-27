@@ -1,34 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import Link from "next/link";
-import siteSettingUrl from "../../services/siteSetting";
-
-
-
-
-export async function getStaticProps() {
-  const res = await fetch(siteSettingUrl);
-  const data = await res.json();
-  
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return {
-    props: {data}, // will be passed to the page component as props
-  }
-}
-
+import siteData from "../../site-info";
  
-function NavBar({data}) {
-  console.log("yo");
-  console.log(data);
+function NavBar() {
+  
+//  console.log(siteData["settings"]);
   return (
     <>
-      <Navbar siteName="Ghost CMS">
-        <NavItemExternal icon={"🐦"} link="https://twitter.com/OyeTewari" />
+      <Navbar siteName={siteData["settings"].title}>
+        <NavItemExternal icon={"🐦"} link={"https://twitter.com/"+siteData["settings"].twitter} />
         <NavItemExternal icon={"📷 "} />
         <NavItem icon={"💠"}>
           <DropdownMenu></DropdownMenu>
@@ -62,7 +43,7 @@ function NavItemExternal(props) {
         target="_blank"
         className="icon-button"
         onClick={() => setOpen(!open)}
-      >
+        >
         {props.icon}
       </a>
       {open && props.children}
@@ -71,7 +52,7 @@ function NavItemExternal(props) {
 }
 function NavItem(props) {
   const [open, setOpen] = useState(false);
-
+  
   return (
     <li className="nav-item">
       <a
@@ -95,7 +76,7 @@ function DropdownMenu() {
   useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
   }, []);
-
+  
   function calcHeight(el) {
     const height = el.offsetHeight;
     setMenuHeight(height);
@@ -104,9 +85,9 @@ function DropdownMenu() {
   function DropdownItem(props) {
     return (
       <a
-        href="#"
-        className="menu-item"
-        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+      href="#"
+      className="menu-item"
+      onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
       >
         <span className="icon-button">{props.leftIcon}</span>
         {props.children}
@@ -114,7 +95,7 @@ function DropdownMenu() {
       </a>
     );
   }
-
+  
   return (
     <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
       <CSSTransition
@@ -123,7 +104,7 @@ function DropdownMenu() {
         classNames="menu-primary"
         unmountOnExit
         onEnter={calcHeight}
-      >
+        >
         <div className="menu">
           <DropdownItem>About us</DropdownItem>
           <DropdownItem leftIcon={"🏷️"} goToMenu="settings">
@@ -159,7 +140,7 @@ function DropdownMenu() {
         classNames="menu-secondary"
         unmountOnExit
         onEnter={calcHeight}
-      >
+        >
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={"🖊️"}>
             <h2>Authors</h2>
@@ -176,5 +157,19 @@ function DropdownMenu() {
 
 
 
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch(allSettingUrl);
+  const posts = await res.json();
+
+  // By returning { props: posts }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      setting,
+    },
+  };
+}
 
 export default NavBar;

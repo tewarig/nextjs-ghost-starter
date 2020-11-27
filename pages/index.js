@@ -2,6 +2,7 @@ import allPostUrl from "../services/post";
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "./comp/navbar";
+import Banner from "./comp/title-img";
 
 function Home({ posts }) {
   // console.log(posts);
@@ -11,16 +12,17 @@ function Home({ posts }) {
       <NavBar />
       <br />
       <br />
-      <br />
-      <br />
+    
+      <Banner/>
       <ul>
+
         <div className="basic-grid">
           {posts.posts.map((post) => (
           
             <li key={post.id}>
               {/* dynamic routing to make slug easily avalible */}
               {/* {   post.primary_tag ?  post.primary_tag : "name: none"} */}
-              {post.primary_tag && console.log(post.primary_tag.name)}
+              {/* {post.primary_tag && console.log(post.primary_tag.name)} */}
   
               <Link
                 href={`/post/${post.slug}`}
@@ -74,14 +76,14 @@ function Home({ posts }) {
 }
 
 // This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries. See the "Technical details" section.
+// It won't be called on client-side, 
 
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const res = await fetch(allPostUrl);
   const posts = await res.json();
+  
 
   // By returning { props: posts }, the Blog component
   // will receive `posts` as a prop at build time

@@ -11,6 +11,22 @@ code {
     monospace;
 }
 
+/* for image element*/
+.hero-img {
+  width: 100%;
+  height: 40%;
+}
+
+/* designing title and tag line */
+.logo {
+  text-align: center;
+  position: absolute;
+  font-size: 18px;
+  top: 25%;
+  left: 37%;
+  color: white;
+}
+
 :root {
   --bg: #242526;
   --bg-accent: #484a4d;
@@ -423,7 +439,11 @@ h4 {
 @media screen and (max-width: 960px) {
   .postBody .kg-image {
     height: 100%;
+    width: auto;
+  }
+  .hero-img {
     width: 100%;
+    height: 300px;
   }
 
   .container {

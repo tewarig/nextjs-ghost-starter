@@ -9,6 +9,7 @@ module.exports = {
       "demo.ghost.io",
       "ghost.io",
       "www.gravatar.com",
+      "demo.ghost.io"
 
     ],
   },
