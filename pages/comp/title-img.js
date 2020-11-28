@@ -9,13 +9,15 @@ function Banner()
     console.log(Background);
     return (<>
 
-     <div class="conatiner"> 
+     <div className="hero-bg"> 
               
-              <img className="hero-img"  src={Background} /> 
+              <img src={Background} class="hero-image"/> 
+
         
-              <div className="logo"> 
-                    <img src={siteData["settings"].logo}/>
-                 </div>
+               
+                 <div class="hero-logo">   
+            <img src={siteData["settings"].logo} class="hero-logo" />
+            </div>
 
                  
               </div>
