@@ -11,15 +11,15 @@ function Banner()
 
      <div class="conatiner"> 
               
-              <img class="hero-img" src={Background} /> 
+              <img className="hero-img"  src={Background} /> 
         
-              <div class="logo"> 
-                    
-                  <h1>{siteData["settings"].title}</h1> 
-    <h4>{siteData["settings"].description}</h4> 
+              <div className="logo"> 
+                    <img src={siteData["settings"].logo}/>
+                 </div>
+
                  
               </div>
-            </div>
+            
     </>);
 }
 
