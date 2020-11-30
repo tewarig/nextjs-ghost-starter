@@ -2,10 +2,13 @@ import { useRouter } from "next/router";
 import { appUrl, contentKey } from "../../site-config";
 import NavBar from "../comp/navbar";
 import Footer from "../comp/footer";
+import Image from "next/image";
+
+
 
 async function getPost(slug) {
   const res = await fetch(
-    `${appUrl}/ghost/api/v3/content/posts/slug/${slug}?key=${contentKey}&fields=title,slug,html`
+    `${appUrl}/ghost/api/v3/content/posts/slug/${slug}?key=${contentKey}&fields=title,feature_image,slug,html`
   ).then((res) => res.json());
 
   const posts = res.posts;
@@ -47,6 +50,7 @@ const Post = ({ post }) => {
 
   const title = post["title"];
   const body = post["html"];
+  const image = post["feature_image"];
 
   if (router.isFallback) {
     return <h1>Loading...</h1>;
@@ -60,12 +64,17 @@ const Post = ({ post }) => {
       <NavBar />
       <br />
       <br />
-      <h2 className="postTitle">{title}</h2>
+      <h1 className="postTitle">{title}</h1>
+      <Image className="postImage"  height={500} width={800} src={image}/>
       <div
         className="postBody"
         dangerouslySetInnerHTML={{ __html: body }}
       ></div>
+      <br/>
+      <br/>
+      <br/>
       <Footer/>
+     
     </>
   ) : (
     <> loading </>

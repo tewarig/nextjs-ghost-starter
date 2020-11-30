@@ -13,13 +13,12 @@ code {
 
 /*footer css code*/
 .footer {
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: #000000;
   color: white;
   height: 35px;
   text-align: center;
+  margin-top: auto;
 }
 /* for image element*/
 .hero-image {
@@ -332,6 +331,13 @@ h4 {
   margin-left: 5%;
   margin-right: 5%;
 }
+.postImage {
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
 .postBody .kg-image {
   height: 30%;
   width: 60%;
@@ -474,6 +480,12 @@ h4 {
 }
 
 @media screen and (max-width: 960px) {
+  .postImage {
+    margin-left: 0%;
+    width: 100%;
+    height: auto;
+    align-self: center;
+  }
   .postBody .kg-image {
     height: 100%;
     width: 100%;
