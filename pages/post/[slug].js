@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { appUrl, contentKey } from "../../site-config";
 import NavBar from "../comp/navbar";
+import Footer from "../comp/footer";
 
 async function getPost(slug) {
   const res = await fetch(
@@ -64,6 +65,7 @@ const Post = ({ post }) => {
         className="postBody"
         dangerouslySetInnerHTML={{ __html: body }}
       ></div>
+      <Footer/>
     </>
   ) : (
     <> loading </>

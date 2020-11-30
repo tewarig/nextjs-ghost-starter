@@ -11,6 +11,16 @@ code {
     monospace;
 }
 
+/*footer css code*/
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  height: 35px;
+  text-align: center;
+}
 /* for image element*/
 .hero-image {
   width: 100%;

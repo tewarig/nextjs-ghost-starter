@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NavBar from "./comp/navbar";
 import Banner from "./comp/title-img";
+import Footer from "./comp/footer";
 
 function Home({ posts }) {
   // console.log(posts);
@@ -14,6 +15,7 @@ function Home({ posts }) {
       <br />
     
       <Banner/>
+      <br/>
       <ul>
 
         <div className="basic-grid">
@@ -71,6 +73,7 @@ function Home({ posts }) {
                   
         </div>
       </ul>
+      <Footer/>     
     </>
   );
 }
