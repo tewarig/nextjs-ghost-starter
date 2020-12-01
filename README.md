@@ -3,6 +3,7 @@
 Simple Ghost default theme for next.js
 # Mobile and desktop preview
 <img src = "./ss/d1.png"  >
+<hr />
 
 <div class="row">
 <img src = "./ss/m1.jpeg" height="300" width = "150" >
