@@ -1,13 +1,13 @@
 var siteData = {
     "settings": {
-    "title": "Ghost",
-    "description": "The professional publishing platform",
-    "logo": "https://demo.ghost.io/content/images/2014/09/Ghost-Transparent-for-DARK-BG.png",
+    "title": "Animegeeks",
+    "description": "The true anime community",
+    "logo": "https://i.ibb.co/HC9GK3Z/Add-a-heading-removebg-preview.png",
     "icon": "https://demo.ghost.io/content/images/2017/07/favicon.png",
     "accent_color": null,
     "cover_image": "https://demo.ghost.io/content/images/2019/10/publication-cover.png",
     "facebook": "ghost",
-    "twitter": "@tryghost",
+    "twitter": "@oyeTewari",
     "lang": "en",
     "timezone": "Etc/UTC",
     "codeinjection_head": null,
