@@ -127,10 +127,10 @@ function DropdownMenu() {
           <DropdownItem goToMenu="main" leftIcon={"◀️"}>
             <h2>Tags</h2>
           </DropdownItem>
-          <DropdownItem leftIcon={"💡"}>HTML</DropdownItem>
-          <DropdownItem leftIcon={"💡"}>CSS</DropdownItem>
-          <DropdownItem leftIcon={"💡"}>JavaScript</DropdownItem>
-          <DropdownItem leftIcon={"💡"}>Awesome!</DropdownItem>
+          <DropdownItem leftIcon={"💡"}>Manga</DropdownItem>
+          <DropdownItem leftIcon={"💡"}>Thoughts</DropdownItem>
+          <DropdownItem leftIcon={"💡"}>Review</DropdownItem>
+          <DropdownItem leftIcon={"💡"}>Meow Meow!</DropdownItem>
         </div>
       </CSSTransition>
 
