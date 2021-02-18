@@ -11,7 +11,9 @@ module.exports = {
       "www.gravatar.com",
       "demo.ghost.io",
       "ghost.org",
-      "static.ghost.org"
+      "static.ghost.org",
+      "res-3.cloudinary.com",
+      "cloudinary.com"
 
     ],
   },
