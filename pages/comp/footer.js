@@ -1,6 +1,6 @@
 function Footer(){
     return(
- <footer className="footer">ghost</footer>
+ <footer className="footer">Animegeeks</footer>
     );
 }
 
